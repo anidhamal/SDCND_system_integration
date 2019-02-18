@@ -41,5 +41,18 @@ Traceback (most recent call last):
     if class_name == 'Red':
 UnboundLocalError: local variable 'class_name' referenced before assignment
 
+[ERROR] [1549883294.254328]: bad callback: <bound method TLDetector.image_cb of <__main__.TLDetector object at 0x7f231b41ee10>>
+Traceback (most recent call last):
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/rospy/topics.py", line 750, in _invoke_callback
+    cb(msg)
+  File "/home/student/Desktop/SDCND_system_integration/ros/src/tl_detector/tl_detector.py", line 79, in image_cb
+    light_wp, state = self.process_traffic_lights()
+  File "/home/student/Desktop/SDCND_system_integration/ros/src/tl_detector/tl_detector.py", line 167, in process_traffic_lights
+    state = self.get_light_state(light)
+  File "/home/student/Desktop/SDCND_system_integration/ros/src/tl_detector/tl_detector.py", line 134, in get_light_state
+    return self.light_classifier.get_classification(cv_image)
+  File "/home/student/Desktop/SDCND_system_integration/ros/src/tl_detector/light_classification/tl_classifier.py", line 135, in get_classification
+    class_name == 'Unknown'
+UnboundLocalError: local variable 'class_name' referenced before assignment
 
 
